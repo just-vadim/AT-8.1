@@ -31,12 +31,12 @@ public class SQLHelper {
         String login = info.getLogin();
         String verificationCodeQuery =
                 "SELECT auth_codes.code" + " " +
-                        "FROM users INNER JOIN auth_codes ON users.id=auth_codes.user_id" + " " +
-                        "WHERE users.id =" + " " +
-                        "(SELECT id" + " " +
-                        "FROM users" + " " +
-                        "WHERE login = ?)" + " " +
-                        "ORDER BY auth_codes.created DESC LIMIT 1;";
+                "FROM users INNER JOIN auth_codes ON users.id=auth_codes.user_id" + " " +
+                "WHERE users.id =" + " " +
+                    "(SELECT id" + " " +
+                    "FROM users" + " " +
+                    "WHERE login = ?)" + " " +
+                "ORDER BY auth_codes.created DESC LIMIT 1;";
         try (Connection connection = getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement(verificationCodeQuery);
             preparedStatement.setString(1, login);
