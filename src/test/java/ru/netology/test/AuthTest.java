@@ -57,6 +57,7 @@ public class AuthTest {
     }
 
     @Test
+    /*Bug*/
     public void shouldBlockUserIfLoginThreeTimesWithInvalidPassword() {
         LoginPage loginPage = new LoginPage();
         AuthInfo validAuthInfo = getAuthInfo();

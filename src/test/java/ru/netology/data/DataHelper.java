@@ -18,7 +18,7 @@ public class DataHelper {
 
     public static AuthInfo getInvalidAuthInfoWithInvalidLogin(){
         Faker faker = new Faker();
-        return new AuthInfo(faker.name().firstName(),"password");
+        return new AuthInfo(faker.name().firstName(),"qwerty123");
     }
 
     public static AuthInfo getInvalidAuthInfoWithInvalidPassword(){
